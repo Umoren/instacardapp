@@ -9,8 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-amplify/ui-react": "^6.1.2",
+    "@chakra-ui/icons": "^2.1.1",
+    "@chakra-ui/next-js": "^2.2.0",
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "aws-amplify": "^6.0.13",
+    "framer-motion": "^11.0.3",
+    "next": "14.1.0",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.1.0"
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@aws-amplify/backend": "^0.10.3",
+    "@aws-amplify/backend-cli": "^0.10.0",
+    "aws-cdk": "^2.126.0",
+    "aws-cdk-lib": "^2.126.0",
+    "constructs": "^10.3.0",
+    "typescript": "^5.3.3"
   }
 }
