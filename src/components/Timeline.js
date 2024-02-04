@@ -15,8 +15,6 @@ export function Timeline({ children }) {
             try {
                 const timelineData = await client.graphql({ query: listTimelineItems });
                 setTimeline(timelineData.data?.listTimelineItems?.items);
-
-                console.log('timeline', timelineData.data.listTimelineItems)
             } catch (error) {
                 console.error('Error fetching users:', error);
             }

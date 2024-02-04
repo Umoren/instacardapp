@@ -14,7 +14,6 @@ export function CommentList({ postId }) {
                     query: listComments,
                     variables: { filter: { timelineItemCommentId: { eq: postId } } },
                 });
-                console.log('Comment data here', commentsData.data.listComments?.items);
                 if (commentsData.data.listComments) {
                     setComments(commentsData.data.listComments?.items);
                 }

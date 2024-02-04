@@ -10,7 +10,6 @@ export function Card({ children }) {
 }
 
 Card.Header = function ({ author }) {
-    console.log('author', author)
     return (
         <Box p={2}>
             <Flex>
