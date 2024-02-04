@@ -1,33 +1,31 @@
-import { generateClient } from 'aws-amplify/data'
 import { useState, useEffect } from 'react';
-import { listTimelineItems } from '../graphql/queries';
 import { Container } from '@chakra-ui/react';
+import mockData from '../data.json'; // Adjust the path to the location of your data.json file
+import { Card } from "@/components/Card";
+import { CommentList } from "@/components/CommentList";
 
-
-const client = generateClient()
-
-
-export function Timeline({ children }) {
-    const [timeline, setTimeline] = useState([])
+export function Timeline() {
+    const [timeline, setTimeline] = useState([]);
 
     useEffect(() => {
-        const fetchTimeline = async () => {
-            try {
-                const timelineData = await client.graphql({ query: listTimelineItems });
-                setTimeline(timelineData.data?.listTimelineItems?.items);
-            } catch (error) {
-                console.error('Error fetching users:', error);
-            }
-        };
-
-        fetchTimeline();
-    },
-        []);
+        setTimeline(mockData.TimelineItems);
+    }, []);
 
     return (
         <Container>
-            {timeline.map(post => children({ post }))}
+            {timeline.map(post => (
+                <Card key={post.id}>
+                    <Card.Header author={mockData.Users.find(user => user.id === post.authorId)} />
+                    <Card.Main content={mockData.Contents.find(content => content.id === post.contentId)} />
+                    <Card.Footer
+                        author={mockData.Users.find(user => user.id === post.authorId)}
+                        description={post.description}
+                        postTime={new Date(post.postTime).toLocaleTimeString()}
+                    >
+                        <CommentList postId={post.id} />
+                    </Card.Footer>
+                </Card>
+            ))}
         </Container>
-    )
-
+    );
 }

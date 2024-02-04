@@ -1,41 +1,24 @@
-import { useEffect, useState } from 'react'
-import { listComments } from '@/graphql/queries'
+import { useEffect, useState } from 'react';
 import { Box, Text } from '@chakra-ui/react';
-import { generateClient } from 'aws-amplify/data'
-
-const client = generateClient()
+import mockData from '../data.json';
 
 export function CommentList({ postId }) {
-    const [comments, setComments] = useState([])
-    useEffect(() => {
-        async function getComments() {
-            try {
-                const commentsData = await client.graphql({
-                    query: listComments,
-                    variables: { filter: { timelineItemCommentId: { eq: postId } } },
-                });
-                if (commentsData.data.listComments) {
-                    setComments(commentsData.data.listComments?.items);
-                }
-            } catch (error) {
-                console.error('Error fetching comments:', error);
-            }
-        }
+    const [comments, setComments] = useState([]);
 
-        if (postId) {
-            getComments();
-        }
-    }, [postId]);
+    useEffect(() => {
+
+        const filteredComments = mockData.Comments.filter(comment => comment.timelineItemId === postId);
+        setComments(filteredComments);
+    }, [postId]); // Dependency array includes postId to refetch when it changes
+
     return (
         <Box>
             {comments.map(comment => (
                 <Text key={comment.id}>
-                    <Text key={comment.id}>
-                        <Text as='b'>{comment.author?.username} </Text>
-                        {comment?.body}
-                    </Text>
+                    <Text as='b'>{comment.author?.username} </Text>
+                    {comment.body}
                 </Text>
             ))}
         </Box>
-    )
+    );
 }

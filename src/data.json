@@ -1,0 +1,90 @@
+{
+  "TimelineItems": [
+    {
+      "id": "1",
+      "description": "First post on the timeline",
+      "postTime": "2024-02-04T10:00:00Z",
+      "contentId": "1",
+      "authorId": "1",
+      "commentIds": ["1", "2"]
+    },
+    {
+      "id": "2",
+      "description": "Second post on the timeline",
+      "postTime": "2024-02-04T11:00:00Z",
+      "contentId": "2",
+      "authorId": "2",
+      "commentIds": ["3"]
+    },
+    {
+      "id": "3",
+      "description": "Third post on the timeline",
+      "postTime": "2024-02-04T11:00:00Z",
+      "contentId": "3",
+      "authorId": "2",
+      "commentIds": ["3"]
+    },
+    {
+      "id": "4",
+      "description": "Fourth post on the timeline",
+      "postTime": "2024-02-04T11:00:00Z",
+      "contentId": "4",
+      "authorId": "2",
+      "commentIds": ["3"]
+    }
+  ],
+  "Contents": [
+    {
+      "id": "1",
+      "source": "https://images.unsplash.com/photo-1682687982093-4773cb0dbc2e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8",
+      "type": "IMAGE"
+    },
+    {
+      "id": "2",
+      "source": "https://player.vimeo.com/progressive_redirect/playback/905237714/rendition/360p/file.mp4?loc=external&oauth2_token_id=1747418641&signature=1048a4ee84580d77d38fc33bfc6ef83adb0707913bd88b00b3d9c112e47f5577",
+      "type": "VIDEO"
+    },
+    {
+      "id": "3",
+      "source": "https://player.vimeo.com/progressive_redirect/playback/902458538/rendition/540p/file.mp4?loc=external&oauth2_token_id=1747418641&signature=641298b7c9a70585a57a4517e63eebc3ad6ef8972948da2d98c16ff672f12d2a",
+      "type": "VIDEO"
+    },
+    {
+      "id": "4",
+      "source": "https://images.unsplash.com/photo-1706474178699-7e3db9b2ba92?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHx8",
+      "type": "IMAGE"
+    }
+  ],
+  "Users": [
+    {
+      "id": "1",
+      "username": "Alice",
+      "profilePic": "https://images.unsplash.com/photo-1706550631672-15f4502b7527?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHx8"
+    },
+    {
+      "id": "2",
+      "username": "Bob",
+      "profilePic": "https://plus.unsplash.com/premium_photo-1687187499277-e1c59bd3032f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bWFufGVufDB8fDB8fHww"
+    }
+  ],
+  "Comments": [
+    {
+      "id": "1",
+      "body": "Great post, Alice!",
+      "authorId": "2",
+      "timelineItemId": "1"
+    },
+    {
+      "id": "2",
+      "body": "Thanks for sharing!",
+      "authorId": "1",
+      "timelineItemId": "1"
+    },
+    {
+      "id": "3",
+      "body": "Interesting content, Bob.",
+      "authorId": "1",
+      "timelineItemId": "2"
+    }
+  ]
+}
