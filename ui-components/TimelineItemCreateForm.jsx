@@ -182,8 +182,7 @@ export default function TimelineItemCreateForm(props) {
           if (onChange) {
             const modelFields = {
               description: value,
-              postTime,
-              timelineItemContentId: selectedCommentIds
+              postTime
             };
             const result = onChange(modelFields);
             value = result?.description ?? value;
@@ -269,20 +268,6 @@ export default function TimelineItemCreateForm(props) {
       >
         {contents.map((content) => (
           <option key={content.id} value={content.id}>{content.source}</option>
-        ))}
-      </SelectField>
-
-      <SelectField
-        label="Comments"
-        isMultiple={true}
-        value={selectedCommentIds}
-        onChange={(e) => {
-          const selectedOptions = Array.from(e.target.selectedOptions, option => option.value);
-          setSelectedCommentIds(selectedOptions);
-        }}
-      >
-        {comments.map((comment) => (
-          <option key={comment.id} value={comment.id}>{comment.body}</option>
         ))}
       </SelectField>
 
